@@ -13,7 +13,7 @@ import homecardimg6 from "../assets/homecard-img-6.jpg";
 const Home = () => {
   return (
     <div className="home-bg-container ">
-      {/* banner section */}
+      {/* banner section  */}
       <div className="flex flex-row  overflow-hidden gap-3 p-10 sm:px-24">
         <img
           className="h-96 rounded-lg shadow-md max-w-[450px]"
