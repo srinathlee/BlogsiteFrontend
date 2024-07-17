@@ -1,5 +1,6 @@
 import Home from "./components/home";
 import Navbar from "./utils/navbar";
+import LoginPage from "./components/loginpage";
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom"
 
 const Layout = () => (
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
       }
     ],
   },
