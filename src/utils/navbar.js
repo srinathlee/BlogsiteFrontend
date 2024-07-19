@@ -37,7 +37,7 @@ const Navbar = () => {
     console.log(drkMode);
   };
   return (
-    <div className=" border:none bg-gray-white py-2 dark:bg-black text-white px-2 md:px-4 lg:px-8 flex justify-between items-center ">
+    <div className=" border:none dark:border-b dark:border-0  dark:border-gray-2  bg-gray-white py-2 dark:bg-black text-white px-2 md:px-4 lg:px-8 flex justify-between items-center ">
       <div>
         <Link to="/">
           <img className="w-24" src={logo} />
