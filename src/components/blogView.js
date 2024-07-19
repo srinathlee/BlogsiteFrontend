@@ -18,7 +18,7 @@ const BlogView = () => {
 
   return (
     <>
-      <div className="px-5 sm:px-20 md:px-40 xl:px-80 dark:bg-black dark:text-white">
+      <div className="px-5 sm:px-20 py-4 md:px-40 xl:px-80 dark:bg-black dark:text-white">
         <div>
           <h1 className="text-2xl mb-5 md:text-4xl font-bold md:mb-8">
             Best Frontend Frameworks for Web Development in 2024

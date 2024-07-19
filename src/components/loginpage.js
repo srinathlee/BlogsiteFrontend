@@ -9,7 +9,7 @@ import {Link} from "react-router-dom"
 const LoginPage = () => {
   return (
     <div className=" dark:bg-black flex px-8 flex-row justify-center items-center h-[90vh] login-bg-container">
-      <div className="px-5 py-3 md:px-8 max-w-450px] w-[500px] h-fit shadow-xl rounded-xl bg-white dark:bg-black dark:border">
+      <div className="px-5 py-1 md:px-8 max-w-450px] w-[500px] h-fit shadow-xl rounded-xl bg-white dark:bg-black dark:border">
         <div className="flex flex-col items-center  gap-2">
         
             <img className="w-24 md:w-36" src={logo} />
