@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import userProfile from "../assets/userprofileimg.webp";
 import CreatedBlogCard from "../utils/created-blogs-card";
+import Footer from "../utils/footer"
 
 const UserAboutView = () => {
   return (
@@ -26,7 +27,7 @@ const UserAboutView = () => {
 
 const UserHomeView = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-10">
       <CreatedBlogCard />
       <CreatedBlogCard />
       <CreatedBlogCard />
@@ -50,9 +51,10 @@ const UserProfile = () => {
     setSelectedTab(value);
   };
   return (
-    <div className="relative dark:bg-black dark:text-white min-h-[90vh]">
-      <div className="grid grid-cols-3 gap-10 px-40 ">
-        <div className="col-span-2 pt-20 px-10 ">
+    <>
+    <div className="relative dark:bg-black dark:text-white min-h-[90vh] pb-10">
+      <div className="grid grid-cols-3  gap-10 md:px-10 lg:px-40 ">
+        <div className=" order-2 md:order-1  col-span-3 md:col-span-2 pt-20 px-10  ">
           <h1 className="font-semibold text-3xl mb-10 dark:text-white text-[#5B0913]">
             Srinath_5255
           </h1>
@@ -82,8 +84,9 @@ const UserProfile = () => {
             {selectedTab === "home" ? <UserHomeView /> : <UserAboutView />}
           </div>
         </div>
-        <div className=" border-l  pl-10 pt-10 flex flex-col gap-4 sticky top-10 ">
-          <img className="w-32 h-32 rounded-full" src={userProfile} />
+        <div className=" order-1 md:order-2 static col-span-3 md:col-span-1 border-l  px-10 md:pl-10 pt-10 flex flex-col gap-4 md:sticky top-10 ">
+         <div className="md:sticky top-10">
+         <img className="w-32 h-32 rounded-full" src={userProfile} />
           <h1 className="font-semibold text-xl  text-[#5B0913] dark:text-white">Srinath_5255</h1>
           <div className="flex flex-col gap-3 ">
             <p className="text-xl font-semibold">Bio : </p>
@@ -93,9 +96,12 @@ const UserProfile = () => {
               20th centuries.
             </p>
           </div>
+         </div>
         </div>
       </div>
     </div>
+   <Footer/>
+    </>
   );
 };
 

@@ -76,7 +76,7 @@ const Navbar = () => {
           />
 
           {drop && (
-            <div className="absolute bg-white text-white right-3 w-72 text-center rounded-md shadow-md">
+            <div className="z-10 absolute bg-white text-white right-3 w-72 text-center rounded-md shadow-md">
               <ul>
                <Link to="/user">
                <li
@@ -87,6 +87,7 @@ const Navbar = () => {
                   Profile
                 </li>
                </Link>
+               <Link to="/library">
                 <li
                   onClick={handleDrop}
                   className="px-4 py-3 border-b border-gray-100   text-black rounded-md flex flex-row items-center justify-start gap-8  hover:bg-[#FCD494]"
@@ -94,13 +95,15 @@ const Navbar = () => {
                   <IoLibrary className=" text-[#5B0913]"/>
                   Library
                 </li>
-                <li
+                </Link>
+                <Link to="/help"><li
                   onClick={handleDrop}
                   className="px-4 py-3 text-black  border-b border-gray-100   rounded-md flex flex-row items-center justify-start gap-8  hover:bg-[#FCD494] "
                 >
                   <FaHandsHelping className=" text-[#5B0913]"/>
                   Help
                 </li>
+                </Link>
                 <li
                   onClick={handleDrop}
                   className="px-4 py-3 text-black  border-b border-gray-100   rounded-md flex flex-row items-center justify-start gap-8   hover:bg-[#FCD494]"

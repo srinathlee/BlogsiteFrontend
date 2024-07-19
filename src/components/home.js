@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "./home.css";
 import heroimg from "../assets/hero-image.avif";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Homeblogcard from "../utils/homeblogcard";

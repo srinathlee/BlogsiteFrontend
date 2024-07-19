@@ -4,6 +4,8 @@ import LoginPage from "./components/loginpage";
 import Register from "./components/register";
 import BlogView from "./components/blogView";
 import UserProfile from "./components/userProfile";
+import UserLibrary from "./components/userLibrary";
+import HelpPage from "./components/help";
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom"
 
 const Layout = () => (
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
       {
         path: "/user",
         element: <UserProfile />,
+      },
+      {
+        path: "/library",
+        element: <UserLibrary />,
+      },
+      {
+        path: "/help",
+        element: <HelpPage/>,
       }
     ],
   },

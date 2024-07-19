@@ -1,0 +1,8 @@
+.help-hero-banner{
+    background-image: url("../assets/helpbannerimage.jpg");
+    background-size: cover;
+    height: 50vh;
+}
+.searchicon{
+    font-size: 20px;
+}
