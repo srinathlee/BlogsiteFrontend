@@ -54,7 +54,7 @@ const UserProfile = () => {
     <>
     <div className="relative dark:bg-black dark:text-white min-h-[90vh] pb-10">
       <div className="grid grid-cols-3  gap-10 md:px-10 lg:px-40 ">
-        <div className=" order-2 md:order-1  col-span-3 md:col-span-2 pt-20 px-10  ">
+        <div className=" order-2 md:order-1  col-span-3 md:col-span-2 pt-20 px-5 md:px-10  ">
           <h1 className="font-semibold text-3xl mb-10 dark:text-white text-[#5B0913]">
             Srinath_5255
           </h1>
@@ -84,7 +84,7 @@ const UserProfile = () => {
             {selectedTab === "home" ? <UserHomeView /> : <UserAboutView />}
           </div>
         </div>
-        <div className=" order-1 md:order-2 static col-span-3 md:col-span-1 border-l  px-10 md:pl-10 pt-10 flex flex-col gap-4 md:sticky top-10 ">
+        <div className=" order-1 md:order-2 static col-span-3 md:col-span-1 border-l px-5 md:px-10 md:pl-10 pt-10 flex flex-col gap-4 md:sticky top-10 ">
          <div className="md:sticky top-10">
          <img className="w-32 h-32 rounded-full" src={userProfile} />
           <h1 className="font-semibold text-xl  text-[#5B0913] dark:text-white">Srinath_5255</h1>

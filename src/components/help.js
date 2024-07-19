@@ -15,9 +15,9 @@ const HelpPage = () => {
   return (
     <>
       <div className="">
-        <div className="px-20 md:px-40 help-hero-banner flex flex-col gap-12 justify-center items-center w-[100%]">
-          <h1 className="text-5xl font-semibold">How can we help?</h1>
-          <div className="max-w-[600px] w-[400px] flex flex-row shadow-md bg-white rounded-md p-3 items-center gap-2">
+        <div className=" px-5 md:px-20 md:px-40 help-hero-banner flex flex-col gap-8 md:gap-12 justify-center items-center w-[100%]">
+          <h1 className="text-3xl md:text-5xl font-semibold">How can we help?</h1>
+          <div className="w-[90%] md:max-w-[600px]  flex flex-row shadow-md bg-white rounded-md p-3 items-center gap-2">
             <IoSearch className="searchicon" />
             <input
               className="w-[100%] outline-none"
@@ -27,10 +27,10 @@ const HelpPage = () => {
           </div>
         </div>
 
-        <div className=" dark:bg-black dark:text-white  py-8 px-20 lg:px-40 grid grid-cols-1 justify-center items-center sm:grid-cols-2 gap-4">
-          <div className="hover:cursor-pointer justify-self-center border  border-black dark:border-gray-200 max-w-72 rounded-sm p-4 flex flex-col justify-center items-center">
+        <div className=" dark:bg-black dark:text-white  py-8 px-5 md:px-20 lg:px-40 grid grid-cols-1 justify-center items-center sm:grid-cols-2 gap-4">
+          <div className="hover:cursor-pointer justify-self-center border  border-black dark:border-gray-200  w-[100%] md:max-w-72 rounded-sm p-4 flex flex-col justify-center items-center">
             {/* <img src={gettingstarted} /> */}
-            <IoCompassOutline className="h-36 w-36 dark:text-white"/>
+            <IoCompassOutline className="h-20 w-20 md:h-36 md:w-36 dark:text-white"/>
 
             <div className="flex flex-col gap-3 ">
               <h1 className="text-center text-xl font-semibold">
@@ -42,9 +42,9 @@ const HelpPage = () => {
             </div>
           </div>
 
-          <div className="hover:cursor-pointer border justify-self-center border-black  dark:border-gray-200 max-w-72 rounded-sm p-4 flex flex-col justify-center items-center">
+          <div className="hover:cursor-pointer border justify-self-center border-black  dark:border-gray-200 [100%] md:max-w-72 rounded-sm p-4 flex flex-col justify-center items-center">
             {/* <img src={manageacc} /> */}
-            <CiUser className="h-36 w-36 dark:text-white"/>
+            <CiUser className="h-20 w-20 md:h-36 md:w-36 dark:text-white"/>
             <div className="flex flex-col gap-3 ">
               <h1 className="text-center text-xl font-semibold">
                 Managing your account
@@ -56,9 +56,9 @@ const HelpPage = () => {
             </div>
           </div>
 
-          <div className="hover:cursor-pointer border  justify-self-center border-black  dark:border-gray-200 max-w-72 rounded-sm p-4 flex flex-col justify-center items-center">
+          <div className="hover:cursor-pointer border  justify-self-center border-black  dark:border-gray-200 [100%] md:max-w-72 rounded-sm p-4 flex flex-col justify-center items-center">
             {/* <img src={readingblog} /> */}
-            <IoBookOutline className="h-36 w-36 dark:text-white"/>
+            <IoBookOutline className="h-20 w-20 md:h-36 md:w-36 dark:text-white"/>
 
             <div className="flex flex-col gap-3 ">
               <h1 className="text-center text-xl font-semibold">Reading</h1>
@@ -68,9 +68,9 @@ const HelpPage = () => {
             </div>
           </div>
 
-          <div className="hover:cursor-pointer border  justify-self-center border-black  dark:border-gray-200 max-w-72 rounded-sm p-4  flex flex-col justify-center items-center">
+          <div className="hover:cursor-pointer border  justify-self-center border-black  dark:border-gray-200 [100%] md:max-w-72 rounded-sm p-4  flex flex-col justify-center items-center">
             {/* <img src={wirtingblog} /> */}
-            <TfiPencilAlt className="h-36 w-36 dark:text-white"/>
+            <TfiPencilAlt className="h-16 w-16 md:h-36 md:w-36 mb-2 dark:text-white"/>
 
             <div className="flex flex-col gap-3 ">
               <h1 className="text-center text-xl font-semibold">

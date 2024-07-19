@@ -54,14 +54,14 @@ const Navbar = () => {
         </div>
         <div>
           <Link to="/login">
-            <button className="text-black rounded-md px-4 py-2 bg-gray-100">
+            <button className="text-xs px-2 text-black rounded-md md:px-4 py-2 bg-gray-100">
               Login
             </button>
           </Link>
         </div>
         <div>
           <Link to="/register">
-            <button className="text-white rounded-md px-4 py-2 bg-[#5B0913]">
+            <button className=" text-xs px-2 text-white rounded-md py-2 md:px-4 bg-[#5B0913]">
               GetStarted
             </button>
           </Link>
@@ -71,7 +71,7 @@ const Navbar = () => {
           <img
             ref={menuRef}
             onClick={handleDrop}
-            className="h-12 w-12 rounded-full"
+            className="h-9 w-9 md:h-12 md:w-12 rounded-full"
             src={userrecologo}
           />
 

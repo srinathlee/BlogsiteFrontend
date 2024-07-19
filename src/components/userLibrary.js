@@ -37,8 +37,8 @@ const UserLibrary = () => {
   return (
     <>
       <div className="relative dark:bg-black dark:text-white min-h-[90vh] pb-10">
-        <div className="grid grid-cols-3  gap-10 md:px-10 lg:px-40 ">
-          <div className=" col-span-3 md:col-span-2 pt-20 px-10  ">
+        <div className="grid grid-cols-3  gap-10 px-5 md:px-10 lg:px-40 ">
+          <div className=" col-span-3 md:col-span-2 pt-20 ">
             <h1 className="font-semibold text-3xl mb-10 dark:text-white text-[#5B0913]">
              Your Library
             </h1>
@@ -69,7 +69,7 @@ const UserLibrary = () => {
             </div>
           </div>
 
-          <div className="  static col-span-3 md:col-span-1 border-l  px-10 md:pl-10 pt-10   ">
+          <div className="  static col-span-3 md:col-span-1 border-t md:border-l  px-10 md:pl-10 pt-10   ">
            <div className="flex flex-col gap-8 sticky top-10">
            <div className="h-fit lg:block  grid-cols-1  ">
               <h className="text-base font-bold dark:text-white">

@@ -16,13 +16,13 @@ const Home = () => {
   return (
     <div className="home-bg-container dark:bg-black">
       {/* banner section  */}
-      <div className="flex flex-row  overflow-hidden gap-3 p-10 sm:px-24">
+      <div className="flex flex-row  overflow-hidden gap-3 p-5 sm:px-24">
         <img
           className="h-96 rounded-lg shadow-xl max-w-[450px] hidden xl:block"
           src={heroimg}
         />
-        <div className="bg-slate-200 dark:bg-[#FCD494] p-10 shadow-md rounded-lg flex flex-col gap-4">
-          <h1 className=" text-5xl text-black font-semibold">
+        <div className="bg-slate-200 dark:bg-[#FCD494] p-5 shadow-md rounded-lg flex flex-col gap-4">
+          <h1 className=" text-2xl md:text-5xl text-black font-semibold">
             Where Focus Meets Insight
           </h1>
           <p className=" text-4 text-[#616161] dark:text-[#5B0913] ">
@@ -39,7 +39,7 @@ const Home = () => {
       </div>
 
       {/* cards section */}
-      <div className="px-10 sm:px-24 grid grid-cols-4 py-10 p">
+      <div className="px-5 sm:px-24 grid grid-cols-4 py-10 p">
         <div className="col-span-4 lg:col-span-3  grid md:grid-cols-3 shrink-0 gap-4">
           <Link to="/blogs">
             {" "}

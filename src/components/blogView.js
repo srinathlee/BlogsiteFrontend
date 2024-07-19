@@ -18,9 +18,9 @@ const BlogView = () => {
 
   return (
     <>
-      <div className="px-10 sm:px-20 md:px-40 xl:px-80 dark:bg-black dark:text-white">
+      <div className="px-5 sm:px-20 md:px-40 xl:px-80 dark:bg-black dark:text-white">
         <div>
-          <h1 className="text-4xl font-bold mb-8">
+          <h1 className="text-2xl mb-5 md:text-4xl font-bold md:mb-8">
             Best Frontend Frameworks for Web Development in 2024
           </h1>
           <div className=" flex flex-row items-center gap-4 max-w-96 mb-8">
@@ -57,7 +57,7 @@ const BlogView = () => {
               <BsSave2Fill className="text-2xl" />
             </div>
           </div>
-          <p className="text-xl">
+          <p className="text:lg md:text-xl">
             Quick Summary: Selecting the right front-end framework is, in fact,
             a significantly important part of web development. In the year 2024,
             quality web apps will be dependent on the right front-end framework,
@@ -177,7 +177,7 @@ const BlogView = () => {
             <h1 className="mb-8 text-2xl font-bold">
               Recommended from Dharana
             </h1>
-            <div className="grid grid-cols-2 gap-6 lg:grid-cols-3  ">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3  ">
               <BlogRecomentationCard />
               <BlogRecomentationCard />
 
