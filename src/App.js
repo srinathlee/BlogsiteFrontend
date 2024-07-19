@@ -1,6 +1,9 @@
 import Home from "./components/home";
 import Navbar from "./utils/navbar";
 import LoginPage from "./components/loginpage";
+import Register from "./components/register";
+import BlogView from "./components/blogView";
+import UserProfile from "./components/userProfile";
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom"
 
 const Layout = () => (
@@ -22,6 +25,18 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/blogs",
+        element: <BlogView />,
+      },
+      {
+        path: "/user",
+        element: <UserProfile />,
       }
     ],
   },
