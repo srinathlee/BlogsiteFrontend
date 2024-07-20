@@ -21,7 +21,7 @@ const BlogView = () => {
       <div className="px-5 sm:px-20 py-4 md:px-40 xl:px-80 dark:bg-black dark:text-white">
         <div>
           <h1 className="text-2xl mb-5 md:text-4xl font-bold md:mb-8">
-            Best Frontend Frameworks for Web Development in 2024
+            Best Frontend Frameworks for Web Development in 2024-july
           </h1>
           <div className=" flex flex-row items-center gap-4 max-w-96 mb-8">
             <img src={userlogo} className="w-20 h-20 rounded-full" />
