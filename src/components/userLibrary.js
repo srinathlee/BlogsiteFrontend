@@ -101,7 +101,7 @@ const UserLibrary = () => {
                   Spritual
                 </p>
                 <p className="px-3 py-2 bg-[#FCD494] w-fit rounded-3xl text hover:cursor-pointer">
-                  Sport
+                  Sports
                 </p>
               </div>
             </div>

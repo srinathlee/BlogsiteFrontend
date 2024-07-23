@@ -10,6 +10,7 @@ import homecardimg5 from "../assets/homecard-img-5.jpg";
 import homecardimg6 from "../assets/homecard-img-6.jpg";
 import { Link } from "react-router-dom";
 import Footer from "../utils/footer";
+// import Corosul from "../utils/swiper"
 
 const Home = () => {
  
@@ -37,6 +38,7 @@ const Home = () => {
           </button>
         </div>
       </div>
+      {/* <Corosul/> */}
 
       {/* cards section */}
       <div className="px-5 sm:px-24 grid grid-cols-4 py-10 p">
