@@ -27,7 +27,7 @@ const Register = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center flex-row gap-2 ">
+        <div className="flex items-center flex-row gap-2">
           <hr className="w-[50%]" />
           <p className="text-[#494e51] text-sm">OR</p>
           <hr className="w-[50%]" />

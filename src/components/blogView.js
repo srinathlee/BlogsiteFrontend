@@ -27,11 +27,11 @@ const BlogView = () => {
             <img src={userlogo} className="w-20 h-20 rounded-full" />
             <div className="flex flex-col w-[100%] gap-2">
               <div className="flex flex-row gap-4">
-                <h1>Srinath_5255</h1>
+                <h1 className="text-base">Srinath_5255</h1>
                 <p className="text-green-700">Follow</p>
               </div>
               <div className="flex flex-row gap-4">
-                <h1>Published on</h1>
+                <h1 className="text-base">Published on</h1>
                 <p>Jan 25, 2024</p>
               </div>
             </div>
@@ -59,66 +59,9 @@ const BlogView = () => {
           </div>
           <p className="text:lg md:text-xl">
             Quick Summary: Selecting the right front-end framework is, in fact,
-            a significantly important part of web development. In the year 2024,
-            quality web apps will be dependent on the right front-end framework,
-            and plenty of options with innovative features will be available.
-            This blog will analyze the best front-end frameworks for web
-            development in 2024. The front-end frameworks have revolutionized
-            the approach of how web developers design and implement user
-            interfaces with a simplified and structured process of developing
-            websites. This is one of the factors that led to the development of
-            front-end frameworks as web applications grew more complex with more
-            mobile and animated features. In the early days of the Web, web
-            pages were rather simple; they mainly featured static HTML with
-            minimal interactivity. But when the demand for real-time, live web
-            applications grew, developers faced some difficulties in handling
-            the complexities of the front-end codebase. Initial front-end
-            frameworks like jQuery tried to deploy DOM manipulations and
-            introduced a more efficient way of controlling web animations.
-            However, with the increase in web application complexity, the need
-            for a more defined and scalable approach emerged. Developers today
-            have different language tools, such as HTML, CSS and Javascript, to
-            design more interactive user interfaces. The incorporation of such
-            tools helps developers come up with robust and useful applications
-            that meet the requirements of users in 2024 and beyond. More
-            importantly, performance aspects such as efficient rendering and
-            clean utilization of resources are also determinant factors in
-            ensuring flawless user experience. Opting for a framework with
-            performance optimization elements can achieve quicker loading time
-            and a higher saving rate. Community Support and Updates An active
-            and vibrant community is a big asset for any front-end framework.
-            Community support is available as a wealth of resources, tutorials
-            and discussions that enable developers to solve problems and learn
-            continually. Moreover, the frameworks that are updated regularly
-            have shown commitment to making a sustainable relevance and
-            responding to ever-changing industry standards. For you to avoid or
-            minimize future problems, it is important to select a framework
-            supported by an active community and a vigorous development team so
-            its support and flexibility will last in the long run. Cost and
-            Resource Efficiency The front-end framework a developer selects
-            impacts the overall budget and resource utilization in a web
-            development effort. Choosing a framework that aligns with the skills
-            of the development team can shorten the learning curve and training
-            costs. Apart from that, frameworks with pre-built tools for
-            optimization and debugging also assist in the maximum utilization of
-            resources, thereby influencing the budget and schedule of the
-            project. Ease of Integration To develop a successful project, you
-            need a flexible framework that can integrate with external
-            resources. Different third-party libraries can cover various tasks
-            and functionalities, such as DOM manipulation, time formatting, data
-            processing, and rich-text editing. Your framework should be capable
-            of managing complex integration procedures, working with various
-            libraries and tools, and being easy to incorporate without
-            compromising stability and performance. Clear documentation and
-            support are also essential to make the integration process
             straightforward. Mobile Development Support Mobile app development
             is one of the critical parts of business success in the modern age
             of digitalization. To achieve this, organizations need to pick the
-            front-end framework that gives sufficient multiplatform flexibility.
-            Frameworks for mobile app development allow businesses to create
-            economical apps that run smoothly on various platforms, shrinking
-            both the cost of production and time-to-market. Using the right
-            front-end frameworks enables businesses to remain competitive and to
             respond to the constantly changing needs of their customers.
             Popularity The advantages of using a common framework for your
             project should be quite obvious. It guarantees a network of

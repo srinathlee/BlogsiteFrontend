@@ -8,16 +8,27 @@ import homecardimg3 from "../assets/homecard-img-3.jpg";
 import homecardimg4 from "../assets/homecard-img-4.jpg";
 import homecardimg5 from "../assets/homecard-img-5.jpg";
 import homecardimg6 from "../assets/homecard-img-6.jpg";
+import designedBanner from "../assets/designedbanner.png";
+
 import { Link } from "react-router-dom";
 import Footer from "../utils/footer";
+// import './styles.css';
+
 // import Corosul from "../utils/swiper"
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+// import required modules
+import { Autoplay, EffectFade, Pagination, Navigation } from "swiper/modules";
 
 const Home = () => {
- 
   return (
     <div className="home-bg-container dark:bg-black">
       {/* banner section  */}
-      <div className="flex flex-row  overflow-hidden gap-3 p-5 sm:px-24">
+      {/* <div className="flex flex-row  overflow-hidden gap-3 p-5 sm:px-24">
         <img
           className="h-96 rounded-lg shadow-xl max-w-[450px] hidden xl:block"
           src={heroimg}
@@ -37,42 +48,94 @@ const Home = () => {
             Explore <FaArrowRightLong className="mt-1" />
           </button>
         </div>
+      </div> */}
+
+      <div className="px-5 sm:px-24 py-5 rounded-md overflow-hidden">
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          effect={"fade"}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          // navigation={true}
+          modules={[EffectFade, Autoplay, Pagination, Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide className="relative">
+            <div  className="absolute top-6 left-10 max-w-[700px] shadow-xl">
+              <h1 className="text-4xl mb-2 font-semibold">Pick a Topic </h1>
+              <p className="text-xl">Select a topic, conduct in-depth research, and craft a captivating and informative blog post.</p>
+            </div>
+            <img
+              className=" rounded-md h-[60vh] w-[100%]"
+              src="https://img.freepik.com/free-photo/portrait-businesswoman-works-from-home-looks-laptop-writes-down-information-makes-notes_1258-199704.jpg?t=st=1722076449~exp=1722080049~hmac=bd735c7022cc2c165c9142bb8a815fe544d6aef40e4b0cf62c800bfc8f012ef0&w=2000"
+            />
+          </SwiperSlide>
+          <SwiperSlide  className="relative">
+          <div  className="absolute bottom-10 left-10 max-w-[700px]">
+              <h1 className="text-4xl mb-2 font-semibold">Right a Blog</h1>
+              <p className="text-xl">Write and publish your blog posts directly on our website. Enjoy an easy-to-use platform that supports all your blogging needs from drafting to publishing.</p>
+            </div>
+            <img
+              className="  rounded-md h-[60vh] w-[100%]"
+              src="https://img.freepik.com/free-photo/portrait-beautiful-young-woman-writing-journal-adding-notes-planner-sitting-floor_1258-199997.jpg?t=st=1722076481~exp=1722080081~hmac=5ef0ede6c22532dfcd4546494aeb1ee48d27d11dd51b86cffafd39dfb752eca2&w=2000"
+            />
+          </SwiperSlide>
+          <SwiperSlide className="relative">
+          <div  className="absolute bottom-10 text-white right-10 max-w-[700px]">
+              <h1 className="text-4xl mb-2 font-semibold">Get Reaction</h1>
+              <p className="text-xl">Monitor how your audience interacts with your blog post. Read comments, see reactions, and engage with your readers to enhance your content and connections.</p>
+            </div>
+            <img
+              className="  rounded-md h-[60vh] w-[100%]"
+              src="https://img.freepik.com/free-photo/lifestyle-modern-people-concept-young-woman-reading-journal-looking-her-notes-laughing_1258-199970.jpg?t=st=1722076506~exp=1722080106~hmac=187d04f1ac448b4ab720678937ea9a3e204e8555575776e0c0f6fd87f93cef05&w=2000"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+          <div  className="absolute top-10 left-10 max-w-[700px]">
+              <h1 className="text-4xl mb-2 font-semibold">Dharana</h1>
+              <p className="text-xl">Where your focused thoughts converge with profound insights, creating impactful and inspiring blog content</p>
+            </div>
+            <img
+              className="  rounded-md h-[60vh] w-[100%]"
+              src="https://img.freepik.com/free-photo/smiling-brunette-womnan-holding-her-diary-writing-down-planner-working-from-home-laptop_1258-199714.jpg?t=st=1722076532~exp=1722080132~hmac=b0cda30193631736b630bee18f4f9b40579a45464c97b3132acb63993db1d872&w=2000"
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
+
       {/* <Corosul/> */}
 
       {/* cards section */}
-      <div className="px-5 sm:px-24 grid grid-cols-4 py-10 p">
+      <div className="px-5 sm:px-24 grid grid-cols-4 py-5 p">
         <div className="col-span-4 lg:col-span-3  grid md:grid-cols-3 shrink-0 gap-4">
           <Link to="/blogs">
-            {" "}
             <Homeblogcard imgg={homecardimg1} />
           </Link>
           <Link to="/blogs">
-            {" "}
             <Homeblogcard imgg={homecardimg2} />
           </Link>
           <Link to="/blogs">
-            {" "}
             <Homeblogcard imgg={homecardimg3} />
           </Link>
           <Link to="/blogs">
-            {" "}
             <Homeblogcard imgg={homecardimg4} />
           </Link>
           <Link to="/blogs">
-            {" "}
             <Homeblogcard imgg={homecardimg5} />
           </Link>
           <Link to="/blogs">
-            {" "}
             <Homeblogcard imgg={homecardimg6} />
           </Link>
           <Link to="/blogs">
-            {" "}
             <Homeblogcard imgg={homecardimg4} />
           </Link>
           <Link to="/blogs">
-            {" "}
             <Homeblogcard imgg={homecardimg3} />
           </Link>
           <Link to="/blogs">

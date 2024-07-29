@@ -6,6 +6,7 @@ import BlogView from "./components/blogView";
 import UserProfile from "./components/userProfile";
 import UserLibrary from "./components/userLibrary";
 import HelpPage from "./components/help";
+import Writeblog from "./components/writeblog";
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom"
 
 const Layout = () => (
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
       {
         path: "/help",
         element: <HelpPage/>,
+      }
+      ,
+      {
+        path: "/writeblog",
+        element: <Writeblog/>,
       }
     ],
   },
