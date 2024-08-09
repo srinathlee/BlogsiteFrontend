@@ -7,6 +7,8 @@ import UserProfile from "./components/userProfile";
 import UserLibrary from "./components/userLibrary";
 import HelpPage from "./components/help";
 import Writeblog from "./components/writeblog";
+import Protectedroute from "./utils/protectedroute";
+import PageNotFoud from "./components/pageNotFoud";
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom"
 
 const Layout = () => (
@@ -34,16 +36,8 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: "/blogs",
+        path: "/blogs/:id",
         element: <BlogView />,
-      },
-      {
-        path: "/user",
-        element: <UserProfile />,
-      },
-      {
-        path: "/library",
-        element: <UserLibrary />,
       },
       {
         path: "/help",
@@ -53,9 +47,31 @@ const router = createBrowserRouter([
       {
         path: "/writeblog",
         element: <Writeblog/>,
+      },
+      {
+        path: "/user",
+        element: <Protectedroute />,
+        children:[
+          {path:'/user',
+            element:<UserProfile/>
+          }
+        ]
+      },
+      {
+        path: "/library",
+        element: <Protectedroute/>,
+        children:[
+          {path:'/library',
+            element:<UserLibrary/>
+          }
+        ]
       }
     ],
   },
+  {
+    path:"*",
+    element:<PageNotFoud/>
+  }
 ]);
 
 function App() {

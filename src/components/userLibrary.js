@@ -1,35 +1,87 @@
-import { React, useState } from "react";
+import { React, useState,useEffect } from "react";
 import userProfile from "../assets/userprofileimg.webp";
 import CreatedBlogCard from "../utils/created-blogs-card";
 import Footer from "../utils/footer";
 import { BsSave2Fill } from "react-icons/bs";
+import axios from "axios";
+import { ThreeDots } from "react-loader-spinner";
+
 
 
 const LikedBlogs = () => {
-  return (
+  let user=localStorage.getItem("user")
+  const [data, setData] = useState("");
+  const [loading, setLoading] = useState(true);
+  console.log(data)
+  user=JSON.parse(user)
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    try {
+      const data = await axios.get("http://localhost:3005/api/blogs/user/liked", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+          "Content-Type": "application/json",
+        },
+      });
+      setData(data.data);
+      setLoading(false);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const loadingView = () => {
+    return (
+      <div className="flex justify-center items-center">
+        <ThreeDots
+          visible={true}
+          height="80"
+          width="80"
+          color="#5b0913"
+          radius="9"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </div>
+    );
+  };
+
+  const successView=()=>{
+    return (
+      <div>
+        <div className="flex flex-col gap-10"> 
+         {
+          data.blogs.map((each)=><CreatedBlogCard key={each._id} each={each} />)
+         } 
+      </div>
+      </div>
+    );
+  }
+
+  return(
     <div>
-      <div className="flex flex-col gap-10">
-      <CreatedBlogCard />
-      <CreatedBlogCard />
-      <CreatedBlogCard />
-      <CreatedBlogCard />
-      <CreatedBlogCard />
+      {
+        loading?loadingView():successView()
+      }
     </div>
-    </div>
-  );
+  )
+ 
 };
 
 const SavedBlogs = () => {
   return (
     <div className="flex flex-col gap-10">
-      <CreatedBlogCard />
+      {/* <CreatedBlogCard /> */}
 
     </div>
   );
 };
 
 const UserLibrary = () => {
-  const [selectedTab, setSelectedTab] = useState("home");
+  const [selectedTab, setSelectedTab] = useState("about");
 
   const handleSelectTab = (value) => {
     setSelectedTab(value);
@@ -43,6 +95,17 @@ const UserLibrary = () => {
              Your Library
             </h1>
             <div className="flex flex-row gap-6 border-b pb-4 mb-10">
+              
+            <p
+                onClick={() => {
+                  handleSelectTab("about");
+                }}
+                className={`hover:cursor-pointer  ${
+                  selectedTab == "about" ? "text-[#5B0913]" : "text-gray-400"
+                }`}
+              >
+                Liked Blogs
+              </p>
               <p
                 onClick={() => {
                   handleSelectTab("home");
@@ -53,16 +116,9 @@ const UserLibrary = () => {
               >
                 Saved Blogs
               </p>
-              <p
-                onClick={() => {
-                  handleSelectTab("about");
-                }}
-                className={`hover:cursor-pointer  ${
-                  selectedTab == "about" ? "text-[#5B0913]" : "text-gray-400"
-                }`}
-              >
-                Liked Blogs
-              </p>
+
+              
+
             </div>
             <div>
               {selectedTab === "home" ? <SavedBlogs /> : <LikedBlogs />}

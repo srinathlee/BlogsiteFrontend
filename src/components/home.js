@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import heroimg from "../assets/hero-image.avif";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Homeblogcard from "../utils/homeblogcard";
@@ -23,8 +23,29 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 // import required modules
 import { Autoplay, EffectFade, Pagination, Navigation } from "swiper/modules";
+import axios from "axios";
+import { MdLocalHospital } from "react-icons/md";
 
 const Home = () => {
+
+  const [data,setData]=useState(null);
+
+  useEffect(()=>{
+    FetchData()
+  },[])
+
+ const FetchData=async()=>{
+  const data = await axios.get("http://localhost:3005/api/blogs",{
+    headers: {
+      'Authorization': `Bearer ${localStorage.getItem('jwtToken')}`,
+      'Content-Type': 'application/json',
+    }
+    });
+
+  setData(data.data.blogs)
+ }
+ 
+
   return (
     <div className="home-bg-container dark:bg-black">
       {/* banner section  */}
@@ -114,10 +135,20 @@ const Home = () => {
       {/* cards section */}
       <div className="px-5 sm:px-24 grid grid-cols-4 py-5 p">
         <div className="col-span-4 lg:col-span-3  grid md:grid-cols-3 shrink-0 gap-4">
-          <Link to="/blogs">
-            <Homeblogcard imgg={homecardimg1} />
-          </Link>
-          <Link to="/blogs">
+             
+
+        {
+
+data!==null?data.map((each)=>(
+          <Link to="/blogs/">
+          <Homeblogcard imgg={homecardimg1} each={each} key={each._id} />
+        </Link>
+         )):""
+             }
+
+
+          
+          {/* <Link to="/blogs">
             <Homeblogcard imgg={homecardimg2} />
           </Link>
           <Link to="/blogs">
@@ -139,9 +170,8 @@ const Home = () => {
             <Homeblogcard imgg={homecardimg3} />
           </Link>
           <Link to="/blogs">
-            {" "}
             <Homeblogcard imgg={homecardimg2} />
-          </Link>
+          </Link> */}
         </div>
 
         <div className="h-fit hidden lg:block  sticky top-10  relative grid-cols-1 border-l border-l-gray-10 p-4 ">
