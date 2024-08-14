@@ -108,7 +108,7 @@ const BlogView = () => {
           headers: {
             Authorization: `Bearer ${jwtToken}`,
             "Content-Type": "application/json",
-          },
+          }, 
         }
       );
       setFollow("")
