@@ -7,6 +7,7 @@ import { ThreeDots } from "react-loader-spinner";
 import useStore from "../../src/store/store.js"
 import { ToastContainer, toast } from "react-toastify";
 import { json } from "react-router-dom";
+import BASE_URL from "../config.js";
 
 
 const UserAboutView = ({ user, updateUserDetails }) => {
@@ -158,7 +159,7 @@ const UserProfile = () => {
 
   const getData = async () => {
     try {
-      const data = await axios.get("http://localhost:3005/api/profile", {
+      const data = await axios.get(`${BASE_URL}/profile`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
           "Content-Type": "application/json",
@@ -191,7 +192,7 @@ const UserProfile = () => {
 
   const updateUserDetails = async (formData) => {
     try {
-      const newData = await axios.put("http://localhost:3005/api/profile/update",formData,{
+      const newData = await axios.put(`${BASE_URL}/profile/update`,formData,{
         headers: {
           Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
           "Content-Type": "application/json",

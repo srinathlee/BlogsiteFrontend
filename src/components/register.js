@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import BASE_URL from "../config";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -34,7 +35,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3005/api/register",
+        `${BASE_URL}/register`,
         userdata
       );
       const jwtToken = response.data.jwtToken;

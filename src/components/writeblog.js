@@ -4,6 +4,7 @@ import { RxCross2 } from "react-icons/rx";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { Navigate, useNavigate } from "react-router-dom";
+import BASE_URL from "../config";
 
 
 const Writeblog = () => {
@@ -97,7 +98,7 @@ const Writeblog = () => {
       data.image=imageUrl;
       console.log(data)
       const response = await axios.post(
-        "http://localhost:3005/api/createblog",
+        `${BASE_URL}i/createblog`,
         data,{
           headers: {
             Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,

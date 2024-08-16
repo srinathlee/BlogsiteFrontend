@@ -10,6 +10,7 @@ import Writeblog from "./components/writeblog";
 import Protectedroute from "./utils/protectedroute";
 import PageNotFoud from "./components/pageNotFoud";
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom"
+import About from "./components/about";
 
 const Layout = () => (
   <div>
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
       {
         path: "/help",
         element: <HelpPage/>,
+      }
+      ,
+      {
+        path: "/about",
+        element: <About/>,
       }
       ,
       {

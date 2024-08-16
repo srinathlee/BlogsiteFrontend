@@ -14,6 +14,7 @@ import { ThreeDots } from "react-loader-spinner";
 import useStore from "../store/store.js";
 import "./hero.css";
 import { BiSolidLike } from "react-icons/bi";
+import BASE_URL from "../config.js";
 
 const BlogView = () => {
   const { id } = useParams();
@@ -76,7 +77,7 @@ const BlogView = () => {
       const jwtToken = localStorage.getItem("jwtToken");
       const { _id } = data.blog;
       const likeResult = await axios.post(
-        `http://localhost:3005/api/blogs/${_id}`,
+        `${BASE_URL}/blogs/${_id}`,
         {},
         {
           headers: {

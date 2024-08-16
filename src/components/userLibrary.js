@@ -5,6 +5,7 @@ import Footer from "../utils/footer";
 import { BsSave2Fill } from "react-icons/bs";
 import axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
+import BASE_URL from "../config";
 
 
 
@@ -20,7 +21,7 @@ const LikedBlogs = () => {
 
   const getData = async () => {
     try {
-      const data = await axios.get("http://localhost:3005/api/blogs/user/liked", {
+      const data = await axios.get(`${BASE_URL}/blogs/user/liked`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
           "Content-Type": "application/json",

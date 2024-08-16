@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import useStore from "../../src/store/store.js"
+import BASE_URL from "../config.js";
 
 
 
@@ -40,7 +41,7 @@ const LoginPage = () => {
     const toastId = toast.loading("please wait");
     try {
       const response = await axios.post(
-        "http://localhost:3005/api/login",
+        `${BASE_URL}/login`,
         userdata
       );
       const jwtToken = response.data.jwtToken;
