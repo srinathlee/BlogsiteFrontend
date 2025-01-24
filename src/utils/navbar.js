@@ -18,12 +18,9 @@ const Navbar = () => {
   const [drkMode, setdrkMode] = useState("light");
   const [drop, setDrop] = useState(false);
   const menuRef = useRef();
-  const user=useStore((state)=>state.user)
-  const {image}=user;
-  console.log(user)
   let logUser=localStorage.getItem("user")
   logUser=JSON.parse(logUser)
-  const imgg=logUser.image
+  const imgg=logUser?.image
 
   const isAuthenticated = localStorage.getItem("jwtToken");
 

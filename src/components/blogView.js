@@ -29,13 +29,15 @@ const BlogView = () => {
   logUser = JSON.parse(logUser);
 
   useEffect(() => {
+    console.log(localStorage.getItem("jwtToken"))
+    console.log(id)
     window.scrollTo(0, 0);
     getData();
   }, [pathname]);
 
   const getData = async () => {
     const jwtToken = localStorage.getItem("jwtToken");
-    const response = await axios.get(`http://localhost:3005/api/blogs/${id}`, {
+    const response = await axios.get(`${BASE_URL}/blogs/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
         "Content-Type": "Application/json",

@@ -98,7 +98,7 @@ const Writeblog = () => {
       data.image=imageUrl;
       console.log(data)
       const response = await axios.post(
-        `${BASE_URL}i/createblog`,
+        `${BASE_URL}/createblog`,
         data,{
           headers: {
             Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
