@@ -94,7 +94,7 @@ const Writeblog = () => {
     const toastId = toast.loading("please wait");
 
     try {
-      data.category=select
+      data.category=selectdata
       data.image=imageUrl;
       console.log(data)
       const response = await axios.post(

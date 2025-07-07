@@ -55,9 +55,17 @@ const router = createBrowserRouter([
         element: <About/>,
       }
       ,
+      
       {
-        path: "/writeblog",
-        element: <Writeblog/>,
+        path:"/writeblog",
+        element:<Protectedroute/>,
+        children:[
+         { path:"/writeblog",
+          element:<Writeblog/>
+
+         }
+        ]
+
       },
       {
         path: "/user",

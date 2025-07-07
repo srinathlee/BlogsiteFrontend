@@ -11,6 +11,7 @@ import { IoLibrary } from "react-icons/io5";
 import { IoLogOut } from "react-icons/io5";
 import { LuPenSquare } from "react-icons/lu";
 import useStore from "../../src/store/store.js"
+import defaultProfileImg from "../assets/default_profile_pic.jpg";
 
 
 const Navbar = () => {
@@ -18,9 +19,11 @@ const Navbar = () => {
   const [drkMode, setdrkMode] = useState("light");
   const [drop, setDrop] = useState(false);
   const menuRef = useRef();
-  let logUser=localStorage.getItem("user")
-  logUser=JSON.parse(logUser)
-  const imgg=logUser?.image
+  const userStr = localStorage.getItem("user");
+  const user = userStr ? JSON.parse(userStr) : null;
+  // const imgg=user?.image
+  const imgg = user?.image ? user.image : defaultProfileImg;
+
 
   const isAuthenticated = localStorage.getItem("jwtToken");
 

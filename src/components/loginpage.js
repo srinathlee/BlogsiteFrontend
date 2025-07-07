@@ -36,7 +36,7 @@ const LoginPage = () => {
     }));
   };
 
-  const register = async (event) => {
+  const login = async (event) => {
     event.preventDefault();
     const toastId = toast.loading("please wait");
     try {
@@ -46,8 +46,9 @@ const LoginPage = () => {
       );
       const jwtToken = response.data.jwtToken;
       localStorage.setItem("jwtToken", jwtToken);
+       localStorage.setItem("user",JSON.stringify(response.data.user))
       setUser(response.data.user)
-      localStorage.setItem("user",JSON.stringify(response.data.user))
+     
       toast.update(toastId, {
         render: "Login successful",
         type: "success",
@@ -122,7 +123,7 @@ const LoginPage = () => {
           </div>
           <p className="text-base  dark:text-white">Forgot password ?</p>
         </div>
-        <button  onClick={register} className="  bg-[#5B0913] rounded-sm md:rounded-xl  text-white px-4 w-[100%] py-1 md:py-3 mt-4 ">Sign in</button>
+        <button  onClick={login} className="  bg-[#5B0913] rounded-sm md:rounded-xl  text-white px-4 w-[100%] py-1 md:py-3 mt-4 ">Sign in</button>
         <p className="text-center mt-4 mb-2  dark:text-white">Dont have an account yet? <Link to="/register"><span className="text-[#5B0913] font-semibold">Register</span></Link></p>
       </div>
     </div>

@@ -8,6 +8,7 @@ import useStore from "../../src/store/store.js"
 import { ToastContainer, toast } from "react-toastify";
 import { json } from "react-router-dom";
 import BASE_URL from "../config.js";
+import defaultProfileImg from "../assets/default_profile_pic.jpg";
 
 
 const UserAboutView = ({ user, updateUserDetails }) => {
@@ -19,7 +20,7 @@ const UserAboutView = ({ user, updateUserDetails }) => {
     name: name || "",
     email: email || "",
     number: number || "",
-    image: image || userProfile,
+    image: image || defaultProfileImg ,
   });
 
   const handleChange = (e) => {

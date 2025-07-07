@@ -40,6 +40,7 @@ const Register = () => {
       );
       const jwtToken = response.data.jwtToken;
       localStorage.setItem("jwtToken", jwtToken);
+      localStorage.setItem("user",JSON.stringify(response.data.user))
       toast.update(toastId, {
         render: "Registration successful",
         type: "success",
