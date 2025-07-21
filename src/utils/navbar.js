@@ -35,6 +35,7 @@ const Navbar = () => {
 
   const Logout = () => {
     localStorage.removeItem("jwtToken");
+    localStorage.removeItem("user");
     setDrop(!drop);
     navigate("/login");
   };

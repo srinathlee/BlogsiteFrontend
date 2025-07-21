@@ -23,7 +23,7 @@ const BlogView = () => {
   const [hasLiked, setHasLiked] = useState(false);
   const [likesCount, setLikesCount] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [isFollow, setFollow] = useState("");
+  const [isFollow, setFollow] = useState("");//initiated a state to track if the user is following the creator
   const [commentInput, setCommentInput] = useState("");
   const [comments, setComments] = useState([]);
   const [commentLoading, setCommentLoading] = useState(false);
@@ -31,7 +31,6 @@ const BlogView = () => {
 
   let logUser = localStorage.getItem("user");
   logUser = JSON.parse(logUser);
-
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -104,7 +103,6 @@ const BlogView = () => {
     } catch (e) {
       setHasLiked((prev) => !prev);
       setLikesCount((prev) => (hasLiked ? prev + 1 : prev - 1));
-  
     }
   };
 
@@ -113,43 +111,33 @@ const BlogView = () => {
       const jwtToken = localStorage.getItem("jwtToken");
       const { creatorId } = data.CreatorDetails;
       const action = isFollow ? "unfollow" : "follow";
-      // console.log("FollowUnfollow action:", action);
-      // console.log(logUser);
       const options = { userIdToUpdate: creatorId, action };
+      await axios.post("http://localhost:3005/api/followorUnfollow", options, {
+        headers: {
+          Authorization: `Bearer ${jwtToken}`,
+          "Content-Type": "application/json",
+        },
+      });
 
-      await axios.post(
-        "http://localhost:3005/api/followorUnfollow",
-        options,
-        {
-          headers: {
-            Authorization: `Bearer ${jwtToken}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      
-       setFollow((prev) => !prev);
-      
+      setFollow((prev) => !prev);
+
       // Fetch updated user data from backend
-      const userRes = await axios.get(`${BASE_URL}/me`, {
+      const userRes = await axios.get(`${BASE_URL}/profile`, {
         headers: {
           Authorization: `Bearer ${jwtToken}`,
         },
       });
-
       // Update localStorage and Zustand/global state
       localStorage.setItem("user", JSON.stringify(userRes.data.user));
       useStore.getState().setUser(userRes.data.user);
 
       // Update isFollow state based on new user data
-      const updatedUser = userRes.data.user;
-      const followingNow = updatedUser.following.some(
-        (each) => each == creatorId
-      );
-      setFollow(followingNow);
-
+      // const updatedUser = userRes.data.user;
+      // const followingNow = updatedUser.following.some(
+      //   (each) => each == creatorId
+      // );
+      // setFollow(followingNow);
     } catch (e) {
-      console.log(e)
       // console.error("Error in FollowUnfollow:", e);
       // Optionally handle error
     }
@@ -187,11 +175,9 @@ const BlogView = () => {
     if (!data.blog) return null;
     const { title, content, category, createdat, creatorName, image } =
       data.blog;
-     
+
     const recomendations = data.recomendations;
     const { creatorId, creatorImg } = data.CreatorDetails;
-    
-  
 
     return (
       <>
@@ -208,15 +194,19 @@ const BlogView = () => {
                   <p
                     onClick={FollowUnfollow}
                     className={`hover:cursor-pointer border-2 px-2 py-1 rounded-lg text-sm transition
-                      ${logUser._id == creatorId
-                        ? "hidden"
-                        : isFollow
+                      ${
+                        logUser._id == creatorId
+                          ? "hidden"
+                          : isFollow
                           ? "bg-[#5B0913] border-[#5B0913] text-white"
                           : "border-[#5B0913] text-[#5B0913]"
-                      }`
-                    }
+                      }`}
                   >
-                    {logUser._id == creatorId ? "" : isFollow ? "following" : "follow"}
+                    {logUser._id == creatorId
+                      ? ""
+                      : isFollow
+                      ? "following"
+                      : "follow"}
                   </p>
                 </div>
                 <div className="flex flex-row gap-4 w-fit">
@@ -304,9 +294,6 @@ const BlogView = () => {
                 </button>
               </form>
             </div>
-
-            
-
 
             <p className="text:lg md:text-xl">{content}</p>
 
