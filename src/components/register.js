@@ -176,6 +176,17 @@ const Register = () => {
           >
             Sign up
           </button>
+           <a
+            href="http://localhost:3005/api/auth/google"
+            className="mt-2 flex items-center justify-center gap-2 px-5 py-2 border border-gray-300 rounded-md bg-white text-sm font-medium shadow-sm hover:shadow-md transition-all"
+          >
+            <img
+              src="https://res.cloudinary.com/dldcgj0mx/image/upload/v1754391116/sq-google-g-logo-update_dezeen_2364_col_0-852x852_siuxcc.jpg"
+              alt="Google logo"
+              className="w-7 h-7 border-radius-full"
+            />
+            <span>Continue with Google</span>
+          </a>
           <p className="text-center mt-4 dark:text-white">
             Dont have an account yet?
             <Link to="/login">

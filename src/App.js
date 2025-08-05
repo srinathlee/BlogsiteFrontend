@@ -11,6 +11,7 @@ import Protectedroute from "./utils/protectedroute";
 import PageNotFoud from "./components/pageNotFoud";
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom"
 import About from "./components/about";
+import GoogleAuthRedirect from "./components/googleredirect";
 
 const Layout = () => (
   <div>
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+       {
+        path: "/google-auth",
+        element: <GoogleAuthRedirect />,
       },
       {
         path: "/blogs/:id",

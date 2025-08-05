@@ -60,6 +60,7 @@ const Home = () => {
   }, [selectedCategories]);
 
   const FetchData = async () => {
+    try{
     // Send selectedCategories as a query param (comma separated)
     const categoryQuery = selectedCategories.join(",");
     const data = await axios.get(
@@ -73,6 +74,11 @@ const Home = () => {
     );
 
     setData(data.data.blogs);
+  }
+  catch (error) {
+      console.error("Error fetching data:", error);
+      setData(null); // Set data to null in case of error
+    }
   };
 
   const loadingView = () => {

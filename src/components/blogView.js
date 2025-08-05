@@ -112,7 +112,7 @@ const BlogView = () => {
       const { creatorId } = data.CreatorDetails;
       const action = isFollow ? "unfollow" : "follow";
       const options = { userIdToUpdate: creatorId, action };
-      await axios.post("http://localhost:3005/api/followorUnfollow", options, {
+      await axios.post(`${BASE_URL}/followorUnfollow`, options, {
         headers: {
           Authorization: `Bearer ${jwtToken}`,
           "Content-Type": "application/json",
