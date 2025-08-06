@@ -153,7 +153,7 @@ const LoginPage = () => {
             Sign in
           </button>
            <a
-            href="https://blogsite-backend.vercel.app/api/auth/google"
+            href="https://blogsitebackend-9hak.onrender.com/api/auth/google"
             className=" mt-2 flex items-center justify-center gap-2 px-5 py-2 border border-gray-300 rounded-md bg-white text-sm font-medium shadow-sm hover:shadow-md transition-all"
           >
             <img
