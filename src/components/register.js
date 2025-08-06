@@ -188,7 +188,7 @@ const Register = () => {
             <span>Continue with Google</span>
           </a>
           <p className="text-center mt-4 dark:text-white">
-            Dont have an account yet?
+            Already have an account?
             <Link to="/login">
               <span className="text-[#5B0913] font-semibold"> Sign in</span>
             </Link>
