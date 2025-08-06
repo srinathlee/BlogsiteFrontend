@@ -11,7 +11,7 @@ const GoogleAuthRedirect = () => {
     console.log("Token received:", token); // Debugging line
     if (token) {
       localStorage.setItem('jwtToken', token); // or cookies
-      navigate('/home'); // or wherever you want
+      navigate('/'); // or wherever you want
     } else {
       navigate('/login');
     }
