@@ -121,7 +121,7 @@ const Writeblog = () => {
 
   const generateImage = async () => {
     if (!prompt) return;
-    setImageUrlai(true);
+    setLoadingai(true);
 
     try {
       const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(
