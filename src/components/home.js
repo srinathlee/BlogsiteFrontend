@@ -94,7 +94,7 @@ const Home = () => {
           wrapperStyle={{}}
           wrapperClass=""
         /> */}
-        <img src={loadbook} className="w-[3y00px]" />
+        <img src={loadbook} className="w-[600px]" />
         {/* <Skeleton />  */}
         {/* <Skeleton count={5} /> */}
       </div>
